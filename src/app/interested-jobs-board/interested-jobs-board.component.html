@@ -1,1 +1,12 @@
-<p>interested-jobs-board works!</p>
+
+<h1>Here Are Your Interested Jobs</h1>
+    <div *ngFor="let job of displayInterestedJobs" class="job-container">
+        <p class="job-title">{{job?.title}}</p>
+        <div class="job-info">
+            <span>{{job?.by}}</span>
+            <span>{{job?.time}}</span>
+            <button (click) ="removeInterested(job?.id)">Remove from Interested</button>
+        </div>
+        
+    </div>
+

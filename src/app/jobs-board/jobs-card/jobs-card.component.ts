@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, OutputEmitterRef } from '@angular/core';
 import { JobsService } from '../../jobs.service';
 import { JobDetail } from '../../jobs.interface';
 
@@ -12,6 +12,7 @@ import { JobDetail } from '../../jobs.interface';
 export class JobsCardComponent implements OnInit {
   @Input() jobId! :string;
   job?: JobDetail
+  // @Output() interestedJob: new OutputEmitterRef
   
 
 
@@ -21,6 +22,13 @@ export class JobsCardComponent implements OnInit {
       // console.log(res);
       this.job = res;
     });
+  }
+
+  addToInterested(){
+    if(this.job){
+      this.jobservice.sendJobsToInterested(this.job); 
+    }
+    
   }
 
 }

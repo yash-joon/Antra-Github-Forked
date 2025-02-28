@@ -1,0 +1,20 @@
+$primary-color: orange;
+.job-container{
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+
+}
+.job-title {
+    font-weight: bold;
+}
+button{
+    border-radius: 1rem;
+    margin-left: 2rem;
+}
+h1{
+    color:$primary-color;
+}
